@@ -1,0 +1,25 @@
+{
+  "name": "v6e-redux-form",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "redux-form": "^6.6.3",
+    "v6e": "^0.4.0"
+  },
+  "devDependencies": {
+    "jest": "^20.0.0",
+    "react": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "sinon": "^2.2.0"
+  }
+}
