@@ -1,6 +1,6 @@
 'use strict';
 
-const makeValidator     = require('./');
+const makeValidator     = require('./lib');
 const {rules: {string}} = require('v6e');
 const {SubmissionError} = require('redux-form');
 const sinon             = require('sinon');
