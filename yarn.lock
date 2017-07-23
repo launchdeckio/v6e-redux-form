@@ -2780,9 +2780,9 @@ uuid@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 
-v6e@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/v6e/-/v6e-0.4.3.tgz#5dea1f6d0f0cb1055b68ef6ff183a41e3bef1ba4"
+v6e@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/v6e/-/v6e-0.5.0.tgz#cd9eebf1fc913eb2c1b4a8dae179176da9e4a9cf"
   dependencies:
     bluebird "^3.5.0"
     email-validator "^1.0.7"
