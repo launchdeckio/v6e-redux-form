@@ -13,13 +13,13 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "redux-form": "^6.6.3",
-    "v6e": "^0.4.0"
+    "v6e": "^0.4.3"
   },
   "devDependencies": {
-    "jest": "^20.0.0",
-    "react": "^15.5.4",
-    "react-redux": "^5.0.4",
-    "redux": "^3.6.0",
-    "sinon": "^2.2.0"
+    "jest": "^20.0.4",
+    "react": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "sinon": "^2.3.8"
   }
 }
