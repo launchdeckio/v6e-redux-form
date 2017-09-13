@@ -6,14 +6,20 @@ const {SubmissionError} = require('redux-form');
 const sinon             = require('sinon');
 
 const schema = {
-    username: string()
+    username: string(),
 };
 
 const successful = {
     username: 'hunter',
 };
 
-const error = {};
+const error = {
+    illegal: 'hacking!!',
+    nested:  {
+        illegal: 'hi',
+        fields:  'hi',
+    }
+};
 
 it('should run the callback if the validation succeeds', () => {
 
@@ -26,11 +32,18 @@ it('should run the callback if the validation succeeds', () => {
 
 it('should throw a SubmissionError if the validation fails', async () => {
 
-    expect.assertions(1);
+    expect.assertions(2);
 
     try {
         await makeValidator(schema)(null)(error);
     } catch (e) {
         expect(e).toBeInstanceOf(SubmissionError);
+        expect(e.errors).toEqual({
+            username: 'Must be a string',
+            _error:   [
+                'illegal: Illegal attribute.',
+                'nested: Illegal attribute.',
+            ]
+        });
     }
 });
