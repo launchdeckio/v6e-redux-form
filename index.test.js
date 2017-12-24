@@ -1,9 +1,9 @@
 'use strict';
 
-const makeValidator     = require('./lib');
+const makeValidator = require('./lib');
+
 const {rules: {string}} = require('v6e');
 const {SubmissionError} = require('redux-form');
-const sinon             = require('sinon');
 
 const schema = {
     username: string(),
@@ -21,21 +21,17 @@ const error = {
     }
 };
 
-it('should run the callback if the validation succeeds', () => {
+it('should not throw when when the validation succeeds', () => {
 
-    const cb = sinon.spy();
-
-    return makeValidator(schema)(cb)(successful).then(() => {
-        expect(cb.called).toBe(true);
-    });
+    return makeValidator(schema)(successful);
 });
 
-it('should throw a SubmissionError if the validation fails', async () => {
+it('should throw a SubmissionError when the validation fails', async () => {
 
     expect.assertions(2);
 
     try {
-        await makeValidator(schema)(null)(error);
+        await makeValidator(schema)(error);
     } catch (e) {
         expect(e).toBeInstanceOf(SubmissionError);
         expect(e.errors).toEqual({
