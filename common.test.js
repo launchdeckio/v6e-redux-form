@@ -1,6 +1,6 @@
 'use strict';
 
-const {foreignPropsDeep} = require('./lib/common');
+const {foreignProps} = require('./lib/common');
 
 it('should return an array of the paths of all props not present in one of the objects', () => {
 
@@ -28,7 +28,7 @@ it('should return an array of the paths of all props not present in one of the o
         },
     };
 
-    const result = foreignPropsDeep(compare, base);
+    const result = foreignProps(compare, base);
 
     expect(result).toEqual([
         'boo',
