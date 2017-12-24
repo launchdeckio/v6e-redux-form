@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "np": "np --yolo",
     "build": "babel lib --out-dir dist",
     "prepublish": "npm run build",
     "test": "jest",
