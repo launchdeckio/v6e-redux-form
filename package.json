@@ -6,7 +6,7 @@
   "scripts": {
     "np": "np --yolo",
     "build": "babel lib --out-dir dist",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch"
   },
