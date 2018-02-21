@@ -31,7 +31,6 @@ it('should return an array of the paths of all props not present in one of the o
     const result = foreignProps(compare, base);
 
     expect(result).toEqual([
-        'boo',
         'mad',
         'b.some',
         'b.nested.obj',
