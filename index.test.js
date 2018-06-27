@@ -43,3 +43,18 @@ it('should throw a SubmissionError when the validation fails', async () => {
         });
     }
 });
+
+it('should allow injection of the SubmissionError class', async () => {
+
+    expect.assertions(1);
+
+    class CustomSubmissionError {
+
+    }
+
+    try {
+        await makeValidator(schema, {strict: true}, {SubmissionError: CustomSubmissionError})(error);
+    } catch (e) {
+        expect(e).toBeInstanceOf(CustomSubmissionError);
+    }
+});
