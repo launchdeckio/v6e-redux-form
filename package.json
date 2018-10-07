@@ -1,6 +1,6 @@
 {
   "name": "v6e-redux-form",
-  "version": "1.0.0-8",
+  "version": "1.0.0-9",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
