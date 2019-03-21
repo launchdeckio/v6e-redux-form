@@ -14,16 +14,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.10",
-    "redux-form": "^7.4.2",
-    "v6e": "^0.9.0"
+    "lodash": "^4.17.11",
+    "redux-form": "^8.1.0",
+    "v6e": "^0.11.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "jest": "^23.2.0",
-    "react": "^16.4.1",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "jest": "^24.5.0",
+    "react": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
   }
 }
