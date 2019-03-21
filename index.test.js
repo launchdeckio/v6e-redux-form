@@ -26,25 +26,24 @@ it('should not throw when when the validation succeeds', () => {
     return makeValidator(schema, {strict: true})(successful);
 });
 
-it('should throw a SubmissionError when the validation fails', async () => {
+it('should throw a SubmissionError when the validation fails', () => {
 
     expect.assertions(2);
 
-    try {
-        await makeValidator(schema, {strict: true})(error);
-    } catch (e) {
-        expect(e).toBeInstanceOf(SubmissionError);
-        expect(e.errors).toEqual({
-            username: 'Must be a string',
-            _error:   [
-                'illegal: Illegal attribute.',
-                'nested: Illegal attribute.',
-            ]
+    return makeValidator(schema, {strict: true})(error)
+        .catch(e => {
+            expect(e).toBeInstanceOf(SubmissionError);
+            expect(e.errors).toEqual({
+                username: 'Must be a string',
+                _error:   [
+                    'illegal: Illegal attribute.',
+                    'nested: Illegal attribute.',
+                ]
+            });
         });
-    }
 });
 
-it('should allow injection of the SubmissionError class', async () => {
+it('should allow injection of the SubmissionError class', () => {
 
     expect.assertions(1);
 
@@ -52,9 +51,8 @@ it('should allow injection of the SubmissionError class', async () => {
 
     }
 
-    try {
-        await makeValidator(schema, {strict: true}, {SubmissionError: CustomSubmissionError})(error);
-    } catch (e) {
-        expect(e).toBeInstanceOf(CustomSubmissionError);
-    }
+    return makeValidator(schema, {strict: true}, {SubmissionError: CustomSubmissionError})(error)
+        .catch(e => {
+            expect(e).toBeInstanceOf(CustomSubmissionError);
+        });
 });
